@@ -1,0 +1,21 @@
+GIT_URI="git://github.com/dekkers/libilbc.git"
+GIT_TAG=upstream/${VERSION}
+inherit git cmake
+
+NAME="libilbc"
+VERSION=1.1.1
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="Internet Low Bit Rate codec"
+DESCRIPTION="This is a packaging friendly copy of the iLBC codec from the
+WebRTC project. It provides a base for distribution packages and can be used
+as a drop-in replacement for the non-free code from RFC 3951."
+HOMEPAGE="http://github.com/dekkers/libilbc"
+
+PATCH_URI="1.1.1-cflags.patch"
+PATCH_URI+=" 1.1.1-install.patch"
+
+PKG_NAMES="libilbc1 libilbc-devel"
+libilbc1_DOCS="LICENSE README"
+libilbc1_CONTENTS="usr/bin/cygilbc-1.dll"
+libilbc_devel_CONTENTS="usr/include/ usr/lib/"
